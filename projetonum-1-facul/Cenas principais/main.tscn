@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://by4uimxnh2pis"]
+
+[ext_resource type="Texture2D" uid="uid://b2ybn5yfu1w1h" path="res://Material Freeway/wallpaperfreeway.png" id="1_5xau6"]
+[ext_resource type="PackedScene" uid="uid://fqx3bk2gdxlx" path="res://Cenas principais/linhadechegada.tscn" id="1_rq8t4"]
+[ext_resource type="PackedScene" uid="uid://bo7h0e8ucfimk" path="res://Cenas principais/area_2d.tscn" id="2_5xau6"]
+[ext_resource type="PackedScene" uid="uid://bf73fmf612uoo" path="res://Cenas principais/canvas_layer.tscn" id="4_ru2qc"]
+[ext_resource type="AudioStream" uid="uid://d37biskk5n215" path="res://Material Freeway/sons/tema.wav" id="5_i0ivb"]
+[ext_resource type="AudioStream" uid="uid://dstr0tcfctm7s" path="res://Material Freeway/sons/ponto.wav" id="5_ulaaa"]
+[ext_resource type="AudioStream" uid="uid://diqbwe72pcur1" path="res://Material Freeway/sons/ganhou.wav" id="6_i0ivb"]
+
+[node name="Main" type="Node" unique_id=874797096]
+
+[node name="Pista" type="Sprite2D" parent="." unique_id=1147448101]
+texture = ExtResource("1_5xau6")
+centered = false
+
+[node name="Linhadechegada" parent="." unique_id=715692380 instance=ExtResource("1_rq8t4")]
+position = Vector2(640, 64)
+collision_layer = 2
+
+[node name="Player" parent="." unique_id=1461396966 instance=ExtResource("2_5xau6")]
+position = Vector2(640, 690)
+collision_mask = 6
+
+[node name="HUD" parent="." unique_id=826350920 instance=ExtResource("4_ru2qc")]
+
+[node name="Timercarrosrapido" type="Timer" parent="." unique_id=296909274]
+wait_time = 0.3
+autostart = true
+
+[node name="Timercarroslentos" type="Timer" parent="." unique_id=303031636]
+wait_time = 0.5
+autostart = true
+
+[node name="Audiotema" type="AudioStreamPlayer2D" parent="." unique_id=1671667249]
+stream = ExtResource("5_i0ivb")
+
+[node name="Audioponto" type="AudioStreamPlayer2D" parent="." unique_id=1425603688]
+stream = ExtResource("5_ulaaa")
+
+[node name="Audiovitoria" type="AudioStreamPlayer2D" parent="." unique_id=960874411]
+stream = ExtResource("6_i0ivb")

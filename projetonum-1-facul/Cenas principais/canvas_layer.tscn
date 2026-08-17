@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bf73fmf612uoo"]
+
+[ext_resource type="FontFile" uid="uid://cgo8rkbr4s0jn" path="res://Material Freeway/PressStart2P-Regular.ttf" id="1_tg6y5"]
+[ext_resource type="Script" uid="uid://bq05b7l4vhra8" path="res://Cenas principais/canvas_layer.gd" id="1_wtfyy"]
+
+[node name="HUD" type="CanvasLayer" unique_id=826350920]
+script = ExtResource("1_wtfyy")
+
+[node name="placar" type="Label" parent="." unique_id=2138977888]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = 100.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_tg6y5")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mensagem" type="Label" parent="." unique_id=524972310]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = -1
+anchor_left = 0.22200002
+anchor_top = 0.423
+anchor_right = 0.77800006
+anchor_bottom = 0.582
+offset_left = 0.25598145
+offset_top = -0.104003906
+offset_right = -0.25604248
+offset_bottom = -0.13601685
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_tg6y5")
+theme_override_font_sizes/font_size = 32
+text = "BOA, você conseguiu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=414885273]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 77.0
+offset_right = 139.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_tg6y5")
+theme_override_font_sizes/font_size = 18
+text = "Próximo nivel"
+
+[node name="Button2" type="Button" parent="." unique_id=1435740661]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 106.0
+offset_right = 54.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_tg6y5")
+text = "Sair"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
